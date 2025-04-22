@@ -1,1 +1,238 @@
-# -
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ремонт Електроніки — Ivan Tymoshuk</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .logo-container span {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    header nav {
+      margin-top: 15px;
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #e67e22;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 40px 30px;
+      margin-bottom: 40px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .service-list li {
+      background: #ecf0f1;
+      padding: 20px;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    .service-list li:hover {
+      background: #e67e22;
+      color: white;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #3498db;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background-color: #2980b9;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    input[type="submit"] {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #1e8449;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #e67e22;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      header nav {
+        display: block;
+        margin-top: 10px;
+      }
+
+      header nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .logo-container {
+        flex-direction: column;
+      }
+
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <span>I.T ЕЛЕКТРОНІКА</span>
+    </div>
+    <nav>
+      <a href="#services">Послуги</a>
+      <a href="#about">Про мене</a>
+      <a href="#reviews">Відгуки</a>
+      <a href="#contact">Контакти</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="services">
+      <h2>Послуги</h2>
+      <ul class="service-list">
+        <li><h3>Побутова електроніка</h3><p>Ремонт телевізорів, мікрохвильовок, тощо.</p></li>
+        <li><h3>Зарядні пристрої та кабелі</h3><p>Ремонт зарядок і кабелів усіх типів.</p></li>
+<li><h3>Ремонт павербанків</h3><p>Заміна елементів, підвищення ємності.</p></li>
+        <li><h3>Заміна акумуляторів</h3><p>У шуруповертах, ліхтарях, та іншому.</p></li>
+        <li><h3>Чистка і профілактика</h3><p>Професійне обслуговування техніки.</p></li>
+      </ul>
+      <p><a class="button" href="#contact">Замовити ремонт</a></p>
+    </section>
+
+    <section id="about">
+      <h2>Про мене</h2>
+      <p>Мене звати Тимошук Іван, я спеціалізуюсь на ремонті електроніки. Працюю швидко, акуратно та з гарантією. Моя мета — забезпечити найкращий сервіс для кожного клієнта.</p>
+    </section>
+
+    <section id="reviews">
+      <h2>Відгуки</h2>
+      <ul class="service-list">
+        <li><p><strong>Олександр:</strong> Дуже задоволений ремонтом! Телевізор працює як новий.</p></li>
+        <li><p><strong>Марина:</strong> Замовляла ремонт павербанка — швидко, якісно, рекомендую!</p></li>
+        <li><p><strong>Андрій:</strong> Професійно і з гарантією. Буду звертатися ще.</p></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Контакти</h2>
+      <p>Телефон: <a href="tel:+380966446988"><strong>096 644 6988</strong></a></p>
+      <p>Telegram: <a href="https://t.me/Ivan230809" target="_blank">@Ivan230809</a></p>
+      <p>TikTok: <a href="https://www.tiktok.com/@ivan63737" target="_blank">@ivan63737</a></p>
+
+      <h3>Онлайн-заявка</h3>
+      <form action="https://formspree.io/f/mjkynqpj" method="POST">
+        <input type="text" name="name" placeholder="Ваше ім’я" required>
+        <input type="tel" name="phone" placeholder="Ваш номер телефону" required>
+        <textarea name="message" rows="5" placeholder="Опишіть проблему" required></textarea>
+        <input type="submit" value="Надіслати">
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Ivan Tymoshuk. Всі права захищено.</p>
+    <p>
+      Відвідувачі сайту:
+      <img src="https://visitor-badge.laobi.icu/badge?page_id=ivan230809.github.io" alt="лічильник відвідувачів">
+    </p>
+  </footer>
+</body>
+</html>
