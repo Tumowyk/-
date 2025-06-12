@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Розрахунок заробітку</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f2f2f2;
+    }
+    label, input, p {
+      margin-top: 10px;
+      display: block;
+    }
+    #result {
+      margin-top: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Розрахунок заробітку за збирання черешні</h2>
+  <label for="kg">Скільки кг зібрав:</label>
+  <input type="number" id="kg" min="0" step="0.1">
+  <button onclick="calculate()">Розрахувати</button>
+
+  <div id="result"></div>
+
+  <script>
+    const pricePerKg = 2.5;
+
+    async function getExchangeRate() {
+      try {
+        const response = await fetch("https://api.exchangerate.host/latest?base=PLN&symbols=UAH");
+        const data = await response.json();
+        return data.rates.UAH;
+      } catch (error) {
+        alert("Не вдалося отримати курс валюти.");
+        return null;
+      }
+    }
+    async function calculate() {
+      const kg = parseFloat(document.getElementById("kg").value);
+      if (isNaN(kg) || kg <= 0) {
+        alert("Введи правильну кількість кг.");
+        return;
+      }
+
+      const totalPLN = kg * pricePerKg;
+      const exchangeRate = await getExchangeRate();
+
+      if (exchangeRate === null) return;
+
+      const totalUAH = totalPLN * exchangeRate;
+
+      document.getElementById("result").innerHTML = 
+        <p><strong>Кількість кг:</strong> ${kg.toFixed(2)} кг</p>
+        <p><strong>Ціна за 1 кг:</strong> ${pricePerKg} злотих</p>
+        <p><strong>Сума в злотих:</strong> ${totalPLN.toFixed(2)} zł</p>
+        <p><strong>Курс PLN → UAH:</strong> ${exchangeRate.toFixed(2)}</p>
+        <p><strong>Сума в гривнях:</strong> ${totalUAH.toFixed(2)} грн</p>
+      ;
+    }
+  </script>
+</body>
+</html>
